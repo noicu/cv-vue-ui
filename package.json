@@ -1,0 +1,90 @@
+{
+  "name": "wave-ui",
+  "version": "3.11.0",
+  "description": "An emerging UI framework for Vue.js (2 & 3) with only the bright side. :sunny:",
+  "author": "Antoni Andre <antoniandre.web@gmail.com>",
+  "homepage": "https://antoniandre.github.io/wave-ui",
+  "repository": "https://github.com/antoniandre/wave-ui",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/antoniandre",
+  "main": "./dist/wave-ui.es.js",
+  "types": "./dist/types/index.d.ts",
+  "unpkg": "dist/wave-ui.umd.js",
+  "jsdelivr": "dist/wave-ui.umd.js",
+  "module": "./dist/wave-ui.es.js",
+  "files": [
+    "dist",
+    "src/wave-ui"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/wave-ui.es.js",
+      "require": "./dist/wave-ui.umd.js"
+    },
+    "./package.json": "./package.json",
+    "./dist/*": "./dist/*",
+    "./src/wave-ui": "./src/wave-ui/index.js",
+    "./src/wave-ui/components": "./src/wave-ui/components/index.js",
+    "./src/wave-ui/*": "./src/wave-ui/*"
+  },
+  "type": "module",
+  "sideEffects": [
+    "*.css",
+    "*.scss",
+    "*.vue"
+  ],
+  "keywords": [
+    "wave ui",
+    "ui framework",
+    "ui library",
+    "vue ui",
+    "vue3",
+    "vue framework",
+    "ui"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --base /wave-ui/",
+    "build-types": "tsc -p ./tsconfig.json",
+    "build-bundle": "BUNDLE=true vite build && npm run build-types && mv ./dist/style.css ./dist/wave-ui.css",
+    "serve": "vite preview --base /wave-ui/",
+    "lint": "vite lint",
+    "publish-doc": "npm run build && npm run build-bundle && git add . && git commit -m 'Publish documentation on Github.' && git push && git push --tag"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.9",
+    "@babel/eslint-parser": "^7.23.10",
+    "@faker-js/faker": "^8.4.1",
+    "@mdi/font": "^6.9.96",
+    "@tsconfig/recommended": "^1.0.2",
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/parser": "^6.6.0",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vue/compiler-sfc": "3.4.18",
+    "autoprefixer": "^10.4.17",
+    "axios": "^1.6.7",
+    "eslint": "^8.56.0",
+    "eslint-plugin-vue": "^9.21.1",
+    "font-awesome": "^4.7.0",
+    "gsap": "^3.12.5",
+    "ionicons": "^4.6.3",
+    "material-design-icons": "^3.0.1",
+    "postcss": "^8.4.35",
+    "pug": "^3.0.2",
+    "rollup-plugin-delete": "^2.0.0",
+    "sass": "^1.70.0",
+    "simple-syntax-highlighter": "^3.0.2",
+    "splitpanes": "^3.1.5",
+    "standard": "^17.1.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.1",
+    "vite-svg-loader": "^5.1.0",
+    "vue": "^3.4.18",
+    "vue-router": "^4.2.5",
+    "vueperslides": "^3.5.1",
+    "vuex": "^4.1.0"
+  },
+  "peerDependencies": {
+    "vue": "^2.6.14 || ^3.2.0"
+  }
+}

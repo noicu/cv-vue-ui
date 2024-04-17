@@ -1,0 +1,67 @@
+header {
+  margin-top: 42px;
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('@/assets/japanese-wave.png') repeat-x 0 5px;
+    z-index: 1;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    inset: 100% 0 auto;
+    height: 30px;
+    box-shadow: 0 0 1.5em rgba(0, 0, 0, 0.4);
+  }
+
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  header {height: 300px;}
+  header:before {background-size: 1400px;}
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1500px) {
+  header {height: 280px;}
+  header:before {
+    display: block;
+    position: relative;
+    padding-bottom: 23.34%;
+    background-size: contain;
+  }
+}
+
+@media screen and (min-width: 1021px) and (max-width: 1280px) {
+  header {height: 238px;}
+  header:before {
+    display: block;
+    position: relative;
+    padding-bottom: 23.34%;
+    background-size: contain;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1020px) {
+  header {height: 180px;}
+  header:before {background-size: 800px;}
+}
+
+@media screen and (max-width: 600px) {
+  header {height: 135px;}
+  header:before {background-size: 600px;}
+}
+
+// For iOS: https://stackoverflow.com/a/23420490/2012407, https://stackoverflow.com/a/47818418/2012407.
+@supports (-webkit-touch-callout: none) {
+  header {background-attachment: scroll;}
+}
