@@ -363,6 +363,7 @@ export default {
   watch: {
     items: {
       handler () {
+        console.log('items changed')
         this.refreshListItems()
         this.applySelectionOnItems(this.modelValue)
       },

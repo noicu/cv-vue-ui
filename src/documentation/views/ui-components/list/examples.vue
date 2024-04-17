@@ -168,7 +168,7 @@ div.lists-demo
     In this example each item has a different icon stored in the data object.
   example
     w-list(:items="listItems2" hover)
-      template(#item="{ item }")
+      template(#item="{ item, index }")
         .w-flex.align-center.justify-space-between
           | {{ item.label }}
           w-icon(md @click="()=>listItems2.splice(index - 1, 1)") {{ item.icon }}
